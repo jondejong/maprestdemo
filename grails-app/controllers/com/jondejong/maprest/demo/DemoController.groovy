@@ -5,20 +5,35 @@ class DemoController {
     def index() {
         def family = getFamily()
 
-        renderMaprest(family, jsonFormat)
+        withFormat {
+            xml {
+                renderMaprest(family, xmlFormat, 'family')
+            }
+            jsonFormat {
+                renderMaprest(family, jsonFormat)
+            }
+        }
     }
 
-    def admin () {
+    def admin() {
         def family = getFamilyForAdminRequest()
 
-        renderMaprest(family, xmlFormat, "family")
+        withFormat {
+            xml {
+                renderMaprest(family, xmlFormat, 'family')
+            }
+            jsonFormat {
+                renderMaprest(family, jsonFormat)
+
+            }
+        }
     }
 
-    protected getFamilyForAdminRequest () {
+    protected getFamilyForAdminRequest() {
         def family = getFamily()
 
-        family.children.each {it.adminRequest = true}
-        family.parents.each {it.adminRequest = true}
+        family.children.each { it.adminRequest = true }
+        family.parents.each { it.adminRequest = true }
         return family
     }
 
