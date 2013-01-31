@@ -17,13 +17,4 @@ class Family {
         ]
     }
 
-    public transformToMapNoChildElement() {
-
-        return [
-                address: address.transformToMap(),
-                parents: parents ? parents.collect { it.transformToMap() } : [],
-                children: children ? children.collect { it.transformToMap() }: []
-        ]
-    }
-
 }
