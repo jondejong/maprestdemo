@@ -3,7 +3,6 @@ package com.jondejong.maprest.demo
 class Person {
 
     Boolean adminRequest
-
     String firstName
     String lastName
     String socialSecurityNumber

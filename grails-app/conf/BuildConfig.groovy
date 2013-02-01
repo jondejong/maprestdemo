@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.3"
         runtime ":resources:1.1.6"
 
-        runtime ":maprest:0.0.6"
+        runtime ":maprest:0.1.0"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
