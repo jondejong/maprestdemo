@@ -7,7 +7,7 @@ class Family {
 
     public transformToMap() {
         return [
-                address: address.transformToMap(),
+                address: address ? address.transformToMap() : '',
                 parents: parents ? parents.collect { it.transformToMap() } : [],
                 children: children ? children.collect { it.transformToMap() }.each {it.put('elementName', 'child')}: []
         ]
